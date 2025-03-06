@@ -51,12 +51,12 @@
                 var computerList = document.getElementById('computerList'); // Seleziona la lista dei computer
 
                 data.forEach((pc, index) => {  // 'index' fornisce il numero progressivo
-                    var iconText = (index + 1).toString();  // Numero progressivo come testo
+                    var iconText = '';  // Lascia vuoto il testo dell'icona, non mettere il numero qui
 
-                    // Crea una nuova icona personalizzata con un numero progressivo
+                    // Crea una nuova icona personalizzata senza numero, solo il nome del computer
                     var icon = L.divIcon({
                         className: 'custom-icon',  // Classe CSS personalizzata per la gestione
-                        html: `<div>${iconText}</div>`,
+                        html: `<div>${iconText}</div>`,  // Non mettere il numero qui
                         iconSize: [25, 25],  // Imposta la dimensione dell'icona
                         iconAnchor: [15, 15],  // Centra l'icona
                     });
@@ -70,7 +70,7 @@
 
                     // Aggiungi un elemento alla lista numerata
                     var listItem = document.createElement('li');
-                    listItem.innerHTML = `${iconText}. <strong>${pc.nome}</strong>`;
+                    listItem.innerHTML = `${index + 1}. <strong>${pc.nome}</strong>`; // Aggiungi il numero progressivo solo nella lista
                     computerList.appendChild(listItem);
 
                     // Rendi il marker cliccabile come prima
