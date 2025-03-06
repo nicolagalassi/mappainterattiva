@@ -1,12 +1,322 @@
 [
-    { nome: "PCOFFICINA1F", x: 140.5, y: 1106, gruppo: "OFFICINA/MAGAZZINO" },
-    { nome: "PCVIDEOCAMERE2F", x: 1200, y: 600, gruppo: "STALLE" },
-    { nome: "PCBOLLE1F", x: 800, y: 300, gruppo: "BOLLETTAZIONE" },
-    { nome: "PCPROSCIUTTIF", x: 500, y: 700, gruppo: "PROSCIUTTI" },
-    { nome: "PCSUINOATERRA2F", x: 900, y: 400, gruppo: "PREPARAZIONE" },
-    { nome: "PCSPEDMON2F", x: 1300, y: 500, gruppo: "SPEDIZIONI" },
-    { nome: "PCSALSICCIA4F", x: 600, y: 900, gruppo: "SALSICCIA" },
-    { nome: "PCPATOSUINEF", x: 300, y: 200, gruppo: "MACELLO SUINO" },
-    { nome: "PCPATOBOVINEF", x: 400, y: 800, gruppo: "MACELLO BOVINO" },
-    { nome: "PCMAGAZZINOSVF", x: 700, y: 1000, gruppo: "ALTRI" }
+    {
+        "nome": "PCMCORELLIF",
+        "x": 1261,
+        "y": 286
+    },
+    {
+        "nome": "PCOFFICINA1F",
+        "x": 1722,
+        "y": 923
+    },
+    {
+        "nome": "PCOFFICINA2F",
+        "x": 1809,
+        "y": 447
+    },
+    {
+        "nome": "PCOFFICINA3F",
+        "x": 1573,
+        "y": 303
+    },
+    {
+        "nome": "PCOFFICINAF",
+        "x": 259,
+        "y": 657
+    },
+    {
+        "nome": "PCVIDEOCAMERE2F",
+        "x": 853,
+        "y": 342
+    },
+    {
+        "nome": "PCSCARICOVIVOF",
+        "x": 1044,
+        "y": 100
+    },
+    {
+        "nome": "PCVETERINARI2F",
+        "x": 1906,
+        "y": 344
+    },
+    {
+        "nome": "PCSCARICOVIVO2F",
+        "x": 1599,
+        "y": 1174
+    },
+    {
+        "nome": "PCVIDEOCAMERE1F",
+        "x": 1496,
+        "y": 882
+    },
+    {
+        "nome": "PCBOLLE2F",
+        "x": 1415,
+        "y": 431
+    },
+    {
+        "nome": "PCBOLLE1F",
+        "x": 442,
+        "y": 168
+    },
+    {
+        "nome": "PCCARPROSCIUTTF",
+        "x": 1233,
+        "y": 823
+    },
+    {
+        "nome": "PCCARTONI2F",
+        "x": 1795,
+        "y": 443
+    },
+    {
+        "nome": "PCPROSCIUTTI2F",
+        "x": 357,
+        "y": 951
+    },
+    {
+        "nome": "PCPROSCIUTTIF",
+        "x": 1337,
+        "y": 864
+    },
+    {
+        "nome": "PCCONTRCELLEF",
+        "x": 1889,
+        "y": 1133
+    },
+    {
+        "nome": "PCSUINOATERRA2F",
+        "x": 1284,
+        "y": 406
+    },
+    {
+        "nome": "PCFRATTASVF",
+        "x": 152,
+        "y": 567
+    },
+    {
+        "nome": "PCCARTONIF",
+        "x": 558,
+        "y": 175
+    },
+    {
+        "nome": "PCPOLLOF",
+        "x": 268,
+        "y": 1055
+    },
+    {
+        "nome": "PCCELLAPOLLO1F",
+        "x": 1654,
+        "y": 1042
+    },
+    {
+        "nome": "PCPRELCELLA34F",
+        "x": 146,
+        "y": 1042
+    },
+    {
+        "nome": "PCCELLAPOLLO2F",
+        "x": 1499,
+        "y": 743
+    },
+    {
+        "nome": "PCSUINOATERRA1F",
+        "x": 348,
+        "y": 119
+    },
+    {
+        "nome": "PCTRASFERIMENTF",
+        "x": 1858,
+        "y": 304
+    },
+    {
+        "nome": "PCSPEDMON2F",
+        "x": 1229,
+        "y": 1065
+    },
+    {
+        "nome": "PCBOVINOAPPES1F",
+        "x": 1234,
+        "y": 824
+    },
+    {
+        "nome": "PCBOVINOAPPES2F",
+        "x": 1112,
+        "y": 1193
+    },
+    {
+        "nome": "PCBOVINOATERRAF",
+        "x": 1832,
+        "y": 712
+    },
+    {
+        "nome": "PCSPEDMON1F",
+        "x": 1932,
+        "y": 232
+    },
+    {
+        "nome": "PCBOVINOINGR1F",
+        "x": 1313,
+        "y": 157
+    },
+    {
+        "nome": "PCBOVINOINGR2F",
+        "x": 1541,
+        "y": 1170
+    },
+    {
+        "nome": "PCBOVINOINGR3F",
+        "x": 1808,
+        "y": 912
+    },
+    {
+        "nome": "PCBOVINOTERRA2F",
+        "x": 319,
+        "y": 354
+    },
+    {
+        "nome": "PCSALASFASCIO3F",
+        "x": 1619,
+        "y": 742
+    },
+    {
+        "nome": "PCSFAPANF",
+        "x": 284,
+        "y": 295
+    },
+    {
+        "nome": "PCSALASFASCIO2F",
+        "x": 237,
+        "y": 1124
+    },
+    {
+        "nome": "PCSALASFASCIOF",
+        "x": 1355,
+        "y": 1182
+    },
+    {
+        "nome": "PCPRELCELLA14F",
+        "x": 350,
+        "y": 232
+    },
+    {
+        "nome": "PCFRATTAGLIE1F",
+        "x": 1502,
+        "y": 699
+    },
+    {
+        "nome": "PCFRATTATERRA1F",
+        "x": 1258,
+        "y": 776
+    },
+    {
+        "nome": "PCCORRIDOIO1F",
+        "x": 1246,
+        "y": 900
+    },
+    {
+        "nome": "PCSUINOAPPESOF",
+        "x": 341,
+        "y": 738
+    },
+    {
+        "nome": "PCPRELCORBOVF",
+        "x": 263,
+        "y": 934
+    },
+    {
+        "nome": "PCBOVINOAPPES3F",
+        "x": 234,
+        "y": 1159
+    },
+    {
+        "nome": "PCINDISOSSO2F",
+        "x": 1198,
+        "y": 835
+    },
+    {
+        "nome": "PCINDISOSSO1F",
+        "x": 1879,
+        "y": 625
+    },
+    {
+        "nome": "PCDISOSSO2F",
+        "x": 449,
+        "y": 1111
+    },
+    {
+        "nome": "PCDISOSSOF",
+        "x": 1709,
+        "y": 758
+    },
+    {
+        "nome": "PCSALSICCIA4F",
+        "x": 1326,
+        "y": 1174
+    },
+    {
+        "nome": "PCSALSICCIA3F",
+        "x": 974,
+        "y": 1068
+    },
+    {
+        "nome": "PCSOTTOPRODF",
+        "x": 1362,
+        "y": 562
+    },
+    {
+        "nome": "PCPATOSUINEF",
+        "x": 1230,
+        "y": 875
+    },
+    {
+        "nome": "PCVALUTSUINOF",
+        "x": 1881,
+        "y": 989
+    },
+    {
+        "nome": "PCPRENOTAMEZZF",
+        "x": 235,
+        "y": 163
+    },
+    {
+        "nome": "PCPATOBOVINEF",
+        "x": 1639,
+        "y": 300
+    },
+    {
+        "nome": "PCGABBIAF",
+        "x": 467,
+        "y": 1076
+    },
+    {
+        "nome": "PCVALUTBOVINO1F",
+        "x": 1493,
+        "y": 638
+    },
+    {
+        "nome": "PCMAGAZZINOSVF",
+        "x": 1288,
+        "y": 552
+    },
+    {
+        "nome": "PCCONGELOF",
+        "x": 1300,
+        "y": 1003
+    },
+    {
+        "nome": "PCNFAENZAF",
+        "x": 727,
+        "y": 392
+    },
+    {
+        "nome": "PCTRIPPERIAF",
+        "x": 1637,
+        "y": 245
+    },
+    {
+        "nome": "PCPELLIBOVF",
+        "x": 832,
+        "y": 478
+    }
 ]
