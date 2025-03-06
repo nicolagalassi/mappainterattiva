@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
         #map {
-            height: 1500px;
+            height: 1000px;
             width: 100%;
         }
     </style>
@@ -23,7 +23,7 @@
             minZoom: -2,
         });
 
-        var imgWidth = 3000, imgHeight = 1500; // Dimensioni della tua immagine
+        var imgWidth = 2500, imgHeight = 1000; // Dimensioni della tua immagine
         var bounds = [[0, 0], [imgHeight, imgWidth]];
         var image = L.imageOverlay('mappabase.png', bounds).addTo(map);
         map.fitBounds(bounds);
