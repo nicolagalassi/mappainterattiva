@@ -6,6 +6,11 @@
     <title>Mappa Interattiva PC</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/174a567165.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="leaflet-beautify-marker-icon.css">
+    <script src="leaflet-beautify-marker-icon.js"></script>
     <style>
         #map {
             height: 800px;
@@ -48,7 +53,13 @@
             .then(response => response.json())
             .then(data => {
                 data.forEach(pc => {
-                    L.marker([pc.y, pc.x])
+		    options = {
+   			 icon: 'leaf',
+   			 iconShape: 'marker'
+		    };
+                    L.marker([pc.y, pc.x]), {
+   			 icon: L.BeautifyIcon.icon(options),
+    			})
                         .addTo(map)
                         .bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
                 });
