@@ -9,4 +9,4 @@
     { nome: "PCPATOSUINEF", x: 300, y: 200, gruppo: "MACELLO SUINO" },
     { nome: "PCPATOBOVINEF", x: 400, y: 800, gruppo: "MACELLO BOVINO" },
     { nome: "PCMAGAZZINOSVF", x: 700, y: 1000, gruppo: "ALTRI" }
-];
+]
