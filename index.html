@@ -93,23 +93,36 @@
         map.on('click', onMapClick);    
 
         // Caricamento dati PC da un file JSON
-        options = {
-            isAlphaNumericIcon: true,
-            borderColor: '#00ABDC',
-            textColor: '#00ABDC',
-            textSize: '10px',
-            innerIconStyle: 'font-size: 13px; '
-        };
-        fetch('pc_mappa.json')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(pc => {
-                    L.marker([pc.y, pc.x], { icon: L.BeautifyIcon.icon(options), draggable: false })
-                        .addTo(map)
-                        .bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
-                });
+       fetch('pc_mappa.json')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach((pc, index) => {  // 'index' fornisce il numero progressivo
+            var options = {
+                isAlphaNumericIcon: true,
+                borderColor: '#00ABDC',
+                textColor: '#00ABDC',
+                iconSize: [40, 40],  // Imposta la dimensione dell'icona
+                innerIconStyle: 'font-size: 18px; line-height: 40px;',  // Cambia la dimensione del testo
+            };
+
+            // Crea l'icona con il numero progressivo
+            var iconText = (index + 1).toString();  // Numero progressivo come testo
+
+            // Aggiungi il numero progressivo nell'icona
+            var marker = L.marker([pc.y, pc.x], {
+                icon: L.BeautifyIcon.icon(options),
+                draggable: false
             })
-            .catch(error => console.error('Errore nel caricamento dei dati:', error));
+            .addTo(map);
+
+            // Trova l'elemento div della icona e imposta il numero come testo
+            marker._icon.querySelector('span').textContent = iconText;
+
+            marker.bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
+        });
+    })
+    .catch(error => console.error('Errore nel caricamento dei dati:', error));
+
     </script>
 </body>
 </html>
