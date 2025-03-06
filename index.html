@@ -46,14 +46,16 @@
 
         // Caricamento dati PC da un file JSON
 	options = {
-   		icon: 'leaf',
-   		iconShape: 'marker'
+   		isAlphaNumericIcon: true
+                , borderColor: '#00ABDC'
+                , textColor: '#00ABDC'
+                , innerIconStyle: 'margin-top:0;'
 		};
         fetch('pc_mappa.json')
             .then(response => response.json())
             .then(data => {
                 data.forEach(pc => {
-                    L.marker([pc.y, pc.x], { icon: L.BeautifyIcon.icon(options), draggable: true })
+                    L.marker([pc.y, pc.x], { icon: L.BeautifyIcon.icon(options), draggable: false })
                         .addTo(map)
                         .bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
                 });
