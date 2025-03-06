@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mappa Interattiva PC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Latest compiled and minified CSS -->
@@ -14,48 +15,48 @@
     
     <!-- Aggiungi il CSS personalizzato -->
     <style>
-        #map {
-            height: 800px;
-            width: 100%;
-        }
+    /* Applica il font a tutta la pagina */
+    body {
+        font-family: 'Roboto Mono', monospace;
+    }
 
-        h2 {
-            font-family: 'Arial', sans-serif;
-            font-size: 24px;
-            color: #333;
-            text-align: center;
-        }
+    h2 {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+    }
 
-        /* Modifica il font e la dimensione del testo nei popup */
-        .leaflet-popup-content {
-            font-family: 'Verdana', sans-serif;
-            font-size: 14px;
-            color: #555;
-        }
+    /* Modifica il font e la dimensione del testo nei popup */
+    .leaflet-popup-content {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 14px;
+        color: #555;
+    }
 
-        /* Personalizza l'aspetto dei link nei popup */
-        .leaflet-popup-content a {
-            font-size: 12px;
-            color: #00ABDC;
-            text-decoration: none;
-        }
+    /* Personalizza l'aspetto dei link nei popup */
+    .leaflet-popup-content a {
+        font-size: 12px;
+        color: #00ABDC;
+        text-decoration: none;
+    }
 
-        /* Aggiungi effetti hover sui link nei popup */
-        .leaflet-popup-content a:hover {
-            text-decoration: underline;
-        }
+    /* Aggiungi effetti hover sui link nei popup */
+    .leaflet-popup-content a:hover {
+        text-decoration: underline;
+    }
 
-        /* Cambia il font per il contenuto dell'intestazione della mappa */
-        .leaflet-control-attribution {
-            font-family: 'Courier New', Courier, monospace;
-        }
+    /* Cambia il font per il contenuto dell'intestazione della mappa */
+    .leaflet-control-attribution {
+        font-family: 'Roboto Mono', monospace;
+    }
 
-        /* Personalizza le icone dei marker */
-        .leaflet-div-icon {
-            font-size: 18px; /* Cambia la dimensione dell'icona */
-            color: #00ABDC;  /* Cambia il colore del testo */
-        }
-    </style>
+    /* Personalizza le icone dei marker */
+    .leaflet-div-icon {
+        font-size: 18px; /* Cambia la dimensione dell'icona */
+        color: #00ABDC;  /* Cambia il colore del testo */
+    }
+</style>
 
 </head>
 <body>
