@@ -52,11 +52,6 @@
         }
 
         /* Personalizza le icone dei marker */
-        .leaflet-div-icon {
-            font-size: 18px; /* Cambia la dimensione dell'icona */
-            color: #00ABDC;  /* Cambia il colore del testo */
-        }
-
         .custom-icon div {
             background-color: #00ABDC;
             color: white;
@@ -121,4 +116,10 @@
                     .addTo(map);
 
                     // Rendi il marker cliccabile come prima
-                    marker.bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</
+                    marker.bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
+                });
+            })
+            .catch(error => console.error('Errore nel caricamento dei dati:', error));
+    </script>
+</body>
+</html>
