@@ -16,6 +16,12 @@
     <h2>Mappa Interattiva PC</h2>
     <div id="map"></div>
 
+    <!-- Lista numerata dei computer sotto la mappa -->
+    <div class="container">
+        <h3>Elenco dei Computer</h3>
+        <ol id="computerList"></ol>
+    </div>
+
     <script>
         var map = L.map('map', {
             crs: L.CRS.Simple,
@@ -42,6 +48,8 @@
         fetch('pc_mappa.json')
             .then(response => response.json())
             .then(data => {
+                var computerList = document.getElementById('computerList'); // Seleziona la lista dei computer
+
                 data.forEach((pc, index) => {  // 'index' fornisce il numero progressivo
                     var iconText = (index + 1).toString();  // Numero progressivo come testo
 
@@ -59,6 +67,11 @@
                         draggable: false
                     })
                     .addTo(map);
+
+                    // Aggiungi un elemento alla lista numerata
+                    var listItem = document.createElement('li');
+                    listItem.innerHTML = `${iconText}. <strong>${pc.nome}</strong>`;
+                    computerList.appendChild(listItem);
 
                     // Rendi il marker cliccabile come prima
                     marker.bindPopup(`<b>${pc.nome}</b>`);
