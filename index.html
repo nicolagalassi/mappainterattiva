@@ -32,11 +32,7 @@
         var bounds = [[0, 0], [imgHeight, imgWidth]];
         var image = L.imageOverlay('mappabase.png', bounds).addTo(map);
         map.fitBounds(bounds);
-		
-		// Mostra coordinate al click sulla mappa
-		//map.on('click', function(e) {
-		//alert(`Cliccato su: X=${e.latlng.lng}, Y=${e.latlng.lat}`);
-		//});
+	    
 	var popup = L.popup();
 
 	function onMapClick(e) {
@@ -49,16 +45,16 @@
 	map.on('click', onMapClick);	
 
         // Caricamento dati PC da un file JSON
+	options = {
+   		icon: 'leaf',
+   		iconShape: 'marker'
+		};
         fetch('pc_mappa.json')
             .then(response => response.json())
             .then(data => {
                 data.forEach(pc => {
-		    options = {
-   			 icon: 'leaf',
-   			 iconShape: 'marker'
-		    };
                     L.marker([pc.y, pc.x]), {
-   			 icon: L.BeautifyIcon.icon(options),
+   			 icon: L.BeautifyIcon.icon(options)
     			})
                         .addTo(map)
                         .bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
