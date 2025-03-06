@@ -15,20 +15,15 @@
 <body>
     <h2>Mappa Interattiva PC</h2>
 
-    <div class="container">
-        <!-- Layout a due colonne -->
-        <div class="row">
-            <div class="col-md-9">
-                <!-- Mappa -->
-                <div id="map"></div>
-            </div>
-            <div class="col-md-3">
-                <!-- Lista dei computer -->
-                <h3>Elenco dei Computer</h3>
-                <ol id="computerList"></ol>
-            </div>
+   <div class="container">
+    <div id="map-container">
+        <div id="map"></div>
+    </div>
+        <div id="list-container">
+            <ul id="computerList"></ul>
         </div>
     </div>
+
 
     <script>
         var map = L.map('map', {
