@@ -1,4 +1,4 @@
 [
-    {"nome": "PCOFFICINA1F", "x": 140.5, "y": 1106, "link": "https://srvmonitor:82/asset.aspx?AssetID=684"},
-    {"nome": "PCVIDEOCAMERE2F", "x": 1200, "y": 600, "link": "https://srvmonitor:82/asset.aspx?AssetID=877"}
+    {"nome": "PCOFFICINA1F", "x": 140.5, "y": 1106},
+    {"nome": "PCVIDEOCAMERE2F", "x": 1200, "y": 600}
 ]
