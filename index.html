@@ -29,10 +29,19 @@
         map.fitBounds(bounds);
 		
 		// Mostra coordinate al click sulla mappa
-		map.on('click', function(e) {
-		alert(`Cliccato su: X=${e.latlng.lng}, Y=${e.latlng.lat}`);
-		});
+		//map.on('click', function(e) {
+		//alert(`Cliccato su: X=${e.latlng.lng}, Y=${e.latlng.lat}`);
+		//});
+	var popup = L.popup();
 
+	function onMapClick(e) {
+    	popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + X=${e.latlng.lng}+Y=${e.latlng.lat})
+        .openOn(map);
+	}
+
+	map.on('click', onMapClick);	
 
         // Caricamento dati PC da un file JSON
         fetch('pc_mappa.json')
