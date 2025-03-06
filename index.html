@@ -14,12 +14,20 @@
 </head>
 <body>
     <h2>Mappa Interattiva PC</h2>
-    <div id="map"></div>
 
-    <!-- Lista numerata dei computer sotto la mappa -->
     <div class="container">
-        <h3>Elenco dei Computer</h3>
-        <ol id="computerList"></ol>
+        <!-- Layout a due colonne -->
+        <div class="row">
+            <div class="col-md-9">
+                <!-- Mappa -->
+                <div id="map"></div>
+            </div>
+            <div class="col-md-3">
+                <!-- Lista dei computer -->
+                <h3>Elenco dei Computer</h3>
+                <ol id="computerList"></ol>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -70,7 +78,7 @@
 
                     // Aggiungi un elemento alla lista numerata
                     var listItem = document.createElement('li');
-                    listItem.innerHTML = `<strong>${pc.nome}</strong>`; // Aggiungi il numero progressivo solo nella lista
+                    listItem.innerHTML = `<strong>${pc.nome}</strong>`; // Aggiungi solo il nome senza il numero
                     computerList.appendChild(listItem);
 
                     // Rendi il marker cliccabile come prima
