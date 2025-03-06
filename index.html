@@ -101,8 +101,8 @@
                 isAlphaNumericIcon: true,
                 borderColor: '#00ABDC',
                 textColor: '#00ABDC',
-                iconSize: [15, 15],  // Imposta la dimensione dell'icona
-                innerIconStyle: 'font-size: 18px; line-height: 40px;',  // Cambia la dimensione del testo
+                iconSize: [40, 40],  // Puoi rimuovere questa linea se non vuoi cambiare la dimensione dell'icona
+                innerIconStyle: 'font-size: 14px; line-height: 40px;',  // Cambia solo la dimensione del testo
             };
 
             // Crea l'icona con il numero progressivo
@@ -116,12 +116,17 @@
             .addTo(map);
 
             // Trova l'elemento div della icona e imposta il numero come testo
-            marker._icon.querySelector('span').textContent = iconText;
+            var iconSpan = marker._icon.querySelector('span');
+            if (iconSpan) {
+                iconSpan.textContent = iconText;  // Imposta il numero progressivo come testo nell'icona
+            }
 
+            // Rendi il marker cliccabile come prima
             marker.bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
         });
     })
     .catch(error => console.error('Errore nel caricamento dei dati:', error));
+
 
     </script>
 </body>
