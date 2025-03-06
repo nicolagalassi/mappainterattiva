@@ -11,12 +11,52 @@
     <script src="https://kit.fontawesome.com/174a567165.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="leaflet-beautify-marker-icon.css">
     <script src="leaflet-beautify-marker-icon.js"></script>
+    
+    <!-- Aggiungi il CSS personalizzato -->
     <style>
         #map {
             height: 800px;
             width: 100%;
         }
+
+        h2 {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Modifica il font e la dimensione del testo nei popup */
+        .leaflet-popup-content {
+            font-family: 'Verdana', sans-serif;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Personalizza l'aspetto dei link nei popup */
+        .leaflet-popup-content a {
+            font-size: 12px;
+            color: #00ABDC;
+            text-decoration: none;
+        }
+
+        /* Aggiungi effetti hover sui link nei popup */
+        .leaflet-popup-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Cambia il font per il contenuto dell'intestazione della mappa */
+        .leaflet-control-attribution {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Personalizza le icone dei marker */
+        .leaflet-div-icon {
+            font-size: 18px; /* Cambia la dimensione dell'icona */
+            color: #00ABDC;  /* Cambia il colore del testo */
+        }
     </style>
+
 </head>
 <body>
     <h2>Mappa Interattiva PC</h2>
@@ -32,26 +72,25 @@
         var bounds = [[0, 0], [imgHeight, imgWidth]];
         var image = L.imageOverlay('mappabase.png', bounds).addTo(map);
         map.fitBounds(bounds);
-	    
-	var popup = L.popup();
+	     
+        var popup = L.popup();
 
-	function onMapClick(e) {
-    	popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at X:" + e.latlng.lng.toString()+ " Y:" + e.latlng.lat.toString())
-        .openOn(map);
-	}
+        function onMapClick(e) {
+            popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at X:" + e.latlng.lng.toString()+ " Y:" + e.latlng.lat.toString())
+            .openOn(map);
+        }
 
-	map.on('click', onMapClick);	
+        map.on('click', onMapClick);    
 
         // Caricamento dati PC da un file JSON
-	options = {
-   		isAlphaNumericIcon: true
-                , borderColor: '#00ABDC'
-                , textColor: '#00ABDC'
-		, textSize: '10px'
-                , innerIconStyle: 'margin-top:0;'
-		};
+        options = {
+            isAlphaNumericIcon: true,
+            borderColor: '#00ABDC',
+            textColor: '#00ABDC',
+            innerIconStyle: 'margin-top:0;',
+        };
         fetch('pc_mappa.json')
             .then(response => response.json())
             .then(data => {
