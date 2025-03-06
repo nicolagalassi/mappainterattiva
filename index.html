@@ -116,7 +116,7 @@
                     .addTo(map);
 
                     // Rendi il marker cliccabile come prima
-                    marker.bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
+                    marker.bindPopup(`<b>${pc.nome}</b>);
                 });
             })
             .catch(error => console.error('Errore nel caricamento dei dati:', error));
