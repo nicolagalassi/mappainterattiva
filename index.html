@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa Interattiva PC</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mappa Interattiva PC</h2>
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -2,
+        });
+
+        var imgWidth = 2000, imgHeight = 1500; // Dimensioni della tua immagine
+        var bounds = [[0, 0], [imgHeight, imgWidth]];
+        var image = L.imageOverlay('mappabase.png', bounds).addTo(map);
+        map.fitBounds(bounds);
+		
+		// Mostra coordinate al click sulla mappa
+		map.on('click', function(e) {
+		alert(`Cliccato su: X=${e.latlng.lng}, Y=${e.latlng.lat}`);
+		});
+
+
+        // Caricamento dati PC da un file JSON
+        fetch('pc_mappa.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(pc => {
+                    L.marker([pc.y, pc.x])
+                        .addTo(map)
+                        .bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
+                });
+            })
+            .catch(error => console.error('Errore nel caricamento dei dati:', error));
+    </script>
+</body>
+</html>
