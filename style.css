@@ -54,3 +54,16 @@ h2 {
     font-family: 'Roboto Mono', monospace; /* Font modificato */
     font-weight: bold;  /* Testo in grassetto */
 }
+
+/* Aggiungi margine tra la mappa e la lista */
+.container {
+    margin-top: 20px;
+}
+
+/* Personalizza l'aspetto della lista numerata */
+#computerList {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    color: #333;
+}
+
