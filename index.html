@@ -55,9 +55,9 @@
         .custom-icon div {
             background-color: #00ABDC;
             color: white;
-            font-size: 14px;
-            width: 30px;
-            height: 30px;
+            font-size: 12px;
+            width: 25px;
+            height: 25px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -87,7 +87,7 @@
         function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
-                .setContent("You clicked the map at X:" + e.latlng.lng.toString()+ " Y:" + e.latlng.lat.toString())
+                .setContent("X:" + e.latlng.lng.toString()+ " Y:" + e.latlng.lat.toString())
                 .openOn(map);
         }
 
@@ -104,7 +104,7 @@
                     var icon = L.divIcon({
                         className: 'custom-icon',  // Classe CSS personalizzata per la gestione
                         html: `<div>${iconText}</div>`,
-                        iconSize: [30, 30],  // Imposta la dimensione dell'icona
+                        iconSize: [25, 25],  // Imposta la dimensione dell'icona
                         iconAnchor: [15, 15],  // Centra l'icona
                     });
 
