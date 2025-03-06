@@ -55,6 +55,34 @@ h2 {
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;  /* Testo in grassetto */
 }
+/* Layout principale con flexbox */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 800px; /* Imposta un'altezza adeguata */
+    width: 100%;
+}
+
+/* Area della mappa - 80% della larghezza */
+#map-container {
+    flex: 4; /* Occupa il 80% */
+    height: 100%;
+}
+
+/* Impostazioni per la mappa */
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Area della lista - 20% della larghezza */
+#list-container {
+    flex: 1; /* Occupa il 20% */
+    overflow-y: auto; /* Permette lo scroll se la lista è lunga */
+    padding: 10px;
+    background: #f8f8f8; /* Leggera differenziazione visiva */
+    border-left: 2px solid #ddd;
+}
 
 /* Lista dei computer */
 #computerList {
@@ -69,3 +97,4 @@ h2 {
     color: #333;
     margin-bottom: 10px;
 }
+
