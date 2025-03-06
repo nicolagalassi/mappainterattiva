@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mappa Interattiva PC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Latest compiled and minified CSS -->
@@ -13,51 +12,53 @@
     <link rel="stylesheet" href="leaflet-beautify-marker-icon.css">
     <script src="leaflet-beautify-marker-icon.js"></script>
     
+    <!-- Aggiungi il link al font di Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
     <!-- Aggiungi il CSS personalizzato -->
     <style>
-    /* Applica il font a tutta la pagina */
-    body {
-        font-family: 'Roboto Mono', monospace;
-    }
+        /* Applica il font a tutta la pagina */
+        body {
+            font-family: 'Roboto Mono', monospace;
+        }
 
-    h2 {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 24px;
-        color: #333;
-        text-align: center;
-    }
+        h2 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
 
-    /* Modifica il font e la dimensione del testo nei popup */
-    .leaflet-popup-content {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 14px;
-        color: #555;
-    }
+        /* Modifica il font e la dimensione del testo nei popup */
+        .leaflet-popup-content {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            color: #555;
+        }
 
-    /* Personalizza l'aspetto dei link nei popup */
-    .leaflet-popup-content a {
-        font-size: 12px;
-        color: #00ABDC;
-        text-decoration: none;
-    }
+        /* Personalizza l'aspetto dei link nei popup */
+        .leaflet-popup-content a {
+            font-size: 12px;
+            color: #00ABDC;
+            text-decoration: none;
+        }
 
-    /* Aggiungi effetti hover sui link nei popup */
-    .leaflet-popup-content a:hover {
-        text-decoration: underline;
-    }
+        /* Aggiungi effetti hover sui link nei popup */
+        .leaflet-popup-content a:hover {
+            text-decoration: underline;
+        }
 
-    /* Cambia il font per il contenuto dell'intestazione della mappa */
-    .leaflet-control-attribution {
-        font-family: 'Roboto Mono', monospace;
-    }
+        /* Cambia il font per il contenuto dell'intestazione della mappa */
+        .leaflet-control-attribution {
+            font-family: 'Roboto Mono', monospace;
+        }
 
-    /* Personalizza le icone dei marker */
-    .leaflet-div-icon {
-        font-size: 18px; /* Cambia la dimensione dell'icona */
-        color: #00ABDC;  /* Cambia il colore del testo */
-    }
-</style>
-
+        /* Personalizza le icone dei marker */
+        .leaflet-div-icon {
+            font-size: 18px; /* Cambia la dimensione dell'icona */
+            color: #00ABDC;  /* Cambia il colore del testo */
+        }
+    </style>
 </head>
 <body>
     <h2>Mappa Interattiva PC</h2>
@@ -79,7 +80,7 @@
         function onMapClick(e) {
             popup
             .setLatLng(e.latlng)
-            .setContent("X:" + e.latlng.lng.toString()+ " Y:" + e.latlng.lat.toString())
+            .setContent("You clicked the map at X:" + e.latlng.lng.toString()+ " Y:" + e.latlng.lat.toString())
             .openOn(map);
         }
 
@@ -90,18 +91,9 @@
             isAlphaNumericIcon: true,
             borderColor: '#00ABDC',
             textColor: '#00ABDC',
+            textSize: '10px',
             innerIconStyle: 'margin-top:0;',
         };
         fetch('pc_mappa.json')
             .then(response => response.json())
             .then(data => {
-                data.forEach(pc => {
-                    L.marker([pc.y, pc.x], { icon: L.BeautifyIcon.icon(options), draggable: false })
-                        .addTo(map)
-                        .bindPopup(`<b>${pc.nome}</b><br><a href='${pc.link}' target='_blank'>Vai al PC</a>`);
-                });
-            })
-            .catch(error => console.error('Errore nel caricamento dei dati:', error));
-    </script>
-</body>
-</html>
