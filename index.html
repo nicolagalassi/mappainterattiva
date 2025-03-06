@@ -8,64 +8,9 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/174a567165.js" crossorigin="anonymous"></script>
-    <style>
-        /* Applica il font a tutta la pagina */
-        body {
-            font-family: 'Roboto Mono', monospace;
-        }
 
-        h2 {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 24px;
-            color: #333;
-            text-align: center;
-        }
-
-        /* Impostazioni per la mappa */
-        #map {
-            height: 800px;
-            width: 100%;
-        }
-
-        /* Modifica il font e la dimensione del testo nei popup */
-        .leaflet-popup-content {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 14px;
-            color: #555;
-        }
-
-        /* Personalizza l'aspetto dei link nei popup */
-        .leaflet-popup-content a {
-            font-size: 12px;
-            color: #00ABDC;
-            text-decoration: none;
-        }
-
-        /* Aggiungi effetti hover sui link nei popup */
-        .leaflet-popup-content a:hover {
-            text-decoration: underline;
-        }
-
-        /* Cambia il font per il contenuto dell'intestazione della mappa */
-        .leaflet-control-attribution {
-            font-family: 'Roboto Mono', monospace;
-        }
-
-        /* Personalizza le icone dei marker */
-        .custom-icon div {
-            background-color: #00ABDC;
-            color: white;
-            font-size: 12px;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Roboto Mono', monospace; /* Font modificato */
-            font-weight: bold;  /* Testo in grassetto */
-        }
-    </style>
+    <!-- Collega il CSS esterno -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Mappa Interattiva PC</h2>
@@ -87,7 +32,7 @@
         function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
-                .setContent("X:" + e.latlng.lng.toString()+ " Y:" + e.latlng.lat.toString())
+                .setContent("X:" + e.latlng.lng.toString() + " Y:" + e.latlng.lat.toString())
                 .openOn(map);
         }
 
@@ -116,7 +61,7 @@
                     .addTo(map);
 
                     // Rendi il marker cliccabile come prima
-                    marker.bindPopup(`<b>${pc.nome}</b>);
+                    marker.bindPopup(`<b>${pc.nome}</b>`);
                 });
             })
             .catch(error => console.error('Errore nel caricamento dei dati:', error));
