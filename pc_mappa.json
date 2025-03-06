@@ -1,4 +1,5 @@
-{ nome: "PCOFFICINA1F", x: 140.5, y: 1106, gruppo: "OFFICINA/MAGAZZINO" },
+[
+    { nome: "PCOFFICINA1F", x: 140.5, y: 1106, gruppo: "OFFICINA/MAGAZZINO" },
     { nome: "PCVIDEOCAMERE2F", x: 1200, y: 600, gruppo: "STALLE" },
     { nome: "PCBOLLE1F", x: 800, y: 300, gruppo: "BOLLETTAZIONE" },
     { nome: "PCPROSCIUTTIF", x: 500, y: 700, gruppo: "PROSCIUTTI" },
